@@ -36,7 +36,7 @@ function DeletarTema() {
         } catch (error: any) {
 
             if (error.toString().includes('403')) {                 // Verifica se o erro é o 403 - Proibido que indica que o Token Expirou
-                alert('O token expirou, favor logar novamente')     // Avisa ao usuário que deu ruim
+                toastAlerta('O token expirou, favor logar novamente')     // Avisa ao usuário que deu ruim
                 handleLogout()                                      // Chama a função para deslogar o usuário
             }
         }
@@ -47,7 +47,7 @@ function DeletarTema() {
     // Com isso, o avisamos e enviamos para a tela de Login
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado')
             navigate('/login')
         }
     }, [token])
@@ -77,10 +77,10 @@ function DeletarTema() {
                 }
             })
 
-            alert('Tema apagado com sucesso')
+            toastAlerta('Tema apagado com sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar o Tema')
+            toastAlerta('Erro ao apagar o Tema')
         }
 
         retornar()

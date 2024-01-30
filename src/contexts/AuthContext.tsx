@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
+import { toastAlerta } from "../utils/toastAlerta";
 
 // Define os dados que Contexto irá armazenar
 interface AuthContextProps {
@@ -41,13 +42,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
         try {   // Tenta fazer a requisição, e se houver erro impede que a aplicação pare
 
             await login(`/usuarios/logar`, userLogin, setUsuario)   // Esperamos que a Service Login() finalize a sua requisição
-            alert("Usuário logado com sucesso")                     // Avisa ao usuário que deu bom
+            toastAlerta("Usuário logado com sucesso")                     // Avisa ao usuário que deu bom
             setIsLoading(false)                                     // Muda o estado para falso, indicando a requisição já terminou de ser processada
 
         } catch (error) {
 
             console.log(error)                                      // Avisa a gente do erro no console do navegador
-            alert("Dados do usuário inconsistentes")                // Avisa ao usuário que deu ruim
+            toastAlerta("Dados do usuário inconsistentes")                // Avisa ao usuário que deu ruim
             setIsLoading(false)                                     // Muda o estado para falso, indicando a requisição já terminou de ser processada
         }
     }

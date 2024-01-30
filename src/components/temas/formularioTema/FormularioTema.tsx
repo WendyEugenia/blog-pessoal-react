@@ -65,15 +65,15 @@ function FormularioTema() {
                     }
                 })
 
-                alert('Tema atualizado com sucesso')
+                toastAlerta('Tema atualizado com sucesso')
                 retornar()
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O token expirou, favor logar novamente')
+                    toastAlerta('O token expirou, favor logar novamente')
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar o Tema')
+                    altoastAlertaert('Erro ao atualizar o Tema')
                 }
 
             }
@@ -87,14 +87,14 @@ function FormularioTema() {
                     }
                 })
 
-                alert('Tema cadastrado com sucesso')
+                toastAlerta('Tema cadastrado com sucesso')
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O token expirou, favor logar novamente')
+                    toastAlerta('O token expirou, favor logar novamente')
                     handleLogout()
                 } else {
-                    alert('Erro ao cadastrado o Tema')
+                    toastAlerta('Erro ao cadastrado o Tema')
                 }
             }
         }
@@ -112,7 +112,7 @@ function FormularioTema() {
     // Com isso, o avisamos e enviamos para a tela de Login
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado')
             navigate('/login')
         }
     }, [token])

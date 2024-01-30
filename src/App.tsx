@@ -1,20 +1,30 @@
-import './App.css';
-import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/login/Login';
-import Cadastro from './pages/cadastro/Cadastro';
-import Home from './pages/home/Home';
+import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './contexts/AuthContext';
 
-import FormularioTema from './components/temas/formularioTema/FormularioTema';
-import ListaTemas from './components/temas/listaTemas/ListaTemas' ;
+import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
+
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Perfil from './pages/perfil/Perfil';
+import Cadastro from './pages/cadastro/Cadastro';
+import ListaTemas from './components/temas/listaTemas/ListaTemas';
+import FormularioTema from './components/temas/formularioTema/FormularioTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTemas';
+import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens';
+import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import './App.css';
+
+
+import 'react-toastify/dist/ReactToastify.css'; // Habilita a Estilização para os Alertas do Toastify
 
 function App() {
   return (
-    <>
+    <> 
     <AuthProvider>
+      <ToastContainer/>
         <BrowserRouter>
           <Navbar />
           <div className='min-h-[80vh]'>
@@ -30,7 +40,7 @@ function App() {
               <Route path="/postagens" element={<ListaPostagens />} />
               <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
-
+              <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />
