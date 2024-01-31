@@ -2,6 +2,7 @@ import axios from "axios";
 
 // Objeto de Config. do Axios - está pedindo para o axios conectar ao nosso Back
 const api = axios.create({
+   // baseURL:'https://blogpessoal-j56g.onrender.com'
     baseURL: import.meta.env.VITE_API_URL
 })
 
