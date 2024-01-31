@@ -7,13 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "script":{
-      "start":"react-script satart",
-      "build": "CI=false && react-scripts build",
-      "teste":"react-scripts test",
-      "eject": "react-scripts eject"
-    }
+    "preview": "vite preview"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
