@@ -65,17 +65,16 @@ function FormularioTema() {
                     }
                 })
 
-                toastAlerta('Tema atualizado com sucesso')
+                alert('Tema atualizado com sucesso')
                 retornar()
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    toastAlerta('O token expirou, favor logar novamente')
+                    alert('O token expirou, favor logar novamente')
                     handleLogout()
                 } else {
-                    altoastAlertaert('Erro ao atualizar o Tema')
+                    alert('Erro ao atualizar o Tema')
                 }
-
             }
 
         } else {    // Essa parte referesse ao Cadastro de um Tema
@@ -87,14 +86,14 @@ function FormularioTema() {
                     }
                 })
 
-                toastAlerta('Tema cadastrado com sucesso')
+                alert('Tema cadastrado com sucesso')
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    toastAlerta('O token expirou, favor logar novamente')
+                    alert('O token expirou, favor logar novamente')
                     handleLogout()
                 } else {
-                    toastAlerta('Erro ao cadastrado o Tema')
+                    alert('Erro ao cadastrado o Tema')
                 }
             }
         }
@@ -112,7 +111,7 @@ function FormularioTema() {
     // Com isso, o avisamos e enviamos para a tela de Login
     useEffect(() => {
         if (token === '') {
-            toastAlerta('Você precisa estar logado')
+            alert('Você precisa estar logado')
             navigate('/login')
         }
     }, [token])
@@ -139,7 +138,7 @@ function FormularioTema() {
                     />
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center "
                     type="submit"
                 >
                     {isLoading ?

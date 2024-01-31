@@ -60,7 +60,7 @@ function Cadastro() {
                 foto: ''
             */
 
-            // O lado esquerdo, representa qual input chamou essa função, a parte direita pega o valor digitado
+            // O lado esquerdo, representa qual input chamou essa função e qual atributo do Objeto Usuario que será acessado, a parte direita pega o valor digitado
             [e.target.name]: e.target.value
         })
 
@@ -77,14 +77,14 @@ function Cadastro() {
             try {   // Tenta fazer a requisição, e se houver erro impede que a aplicação pare
 
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)  // Esperamos que a Service cadastrarUsuario() finalize a sua requisição
-                toastAlerta('Usuário cadastrado com sucesso')                             // Avisa ao usuário que deu bom
+                alert('Usuário cadastrado com sucesso')                             // Avisa ao usuário que deu bom
 
             } catch (error) {
-                toastAlerta('Erro ao cadastrar o Usuário')                                // Avisa ao usuário que deu ruim
+                alert('Erro ao cadastrar o Usuário')                                // Avisa ao usuário que deu ruim
             }
 
         } else {
-            toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.')    // Se as senhas forem < do que 8 ou forem difernetes
+            alert('Dados inconsistentes. Verifique as informações de cadastro.')    // Se as senhas forem < do que 8 ou forem difernetes
             setUsuario({ ...usuario, senha: "" })   // Apaga a senha digitada
             setConfirmaSenha("")                    // Apaga a senha digitada
         }

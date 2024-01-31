@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import Tema from '../../../models/Tema'
 
+// Definimos uma Interface chamada CardTemasProps, e indicamos que sua estrutura contém uma propriedade chamada tema
 interface CardTemaProps {
-    tema: Tema
+    tema: Tema  // A propriedade tema é um objeto da Model Tema, ou seja, um objeto com id e descricao
 }
 
-function CardTemas({ tema }: CardTemaProps) {  
+function CardTemas({ tema }: CardTemaProps) {   // Definimos que o CardTemas recebe uma propriedade chamada tema e sua estrutura segue a Interface CardTemaProps
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
             <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
