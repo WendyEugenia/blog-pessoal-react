@@ -1,7 +1,7 @@
 import {AuthProvider} from "./contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './components/navBar/NavBar';
+import Navbar from './components/navBar/NavBar.tsx';
 import Footer from './components/footer/Footer';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
