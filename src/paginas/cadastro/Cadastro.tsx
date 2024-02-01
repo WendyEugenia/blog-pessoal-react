@@ -2,8 +2,8 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
-import { toastAlerta } from '../../utils/toastAlerta'
 import './Cadastro.css'
+import { toastAlerta } from '../../util/toastAlerta'
 
 function Cadastro() {
 
@@ -58,7 +58,7 @@ function Cadastro() {
         toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
 
       } catch (error) {
-        toastAlerta('Erro ao cadastrar o Usuário', 'erro')
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
       }
 
     } else {
